@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Translator Akun Akuntansi</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Translator Akun Akuntansi</h1>
+    <p>Masukkan nama akun dalam Bahasa Indonesia untuk diterjemahkan ke Bahasa Inggris.</p>
+    <form id="translatorForm">
+      <input type="text" id="accountName" placeholder="Masukkan nama akun" required>
+      <button type="submit">Terjemahkan</button>
+    </form>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const translations = {
+  "kas": "cash",
+  "bank": "bank",
+  "piutang usaha": "accounts receivable",
+  "piutang lain-lain": "other receivables",
+  "persediaan": "inventory",
+  "beban dibayar dimuka": "prepaid expenses",
+  "investasi jangka pendek": "short-term investments",
+  "aktiva tetap": "fixed assets",
+  "tanah": "land",
+  "bangunan": "building",
+  "kendaraan": "vehicle",
+  "peralatan kantor": "office equipment",
+  "peralatan produksi": "production equipment",
+  "aset tak berwujud": "intangible assets",
+  "hak paten": "patent",
+  "merek dagang": "trademark",
+  "investasi jangka panjang": "long-term investments",
+  "hutang usaha": "accounts payable",
+  "hutang bank": "bank loan",
+  "hutang pajak": "tax payable",
+  "hutang gaji": "wages payable",
+  "pendapatan diterima dimuka": "unearned revenue",
+  "utang hipotek": "mortgage payable",
+  "utang obligasi": "bonds payable",
+  "cadangan kerugian piutang": "allowance for doubtful accounts",
+  "modal": "capital",
+  "laba ditahan": "retained earnings",
+  "ekuitas pemilik": "owner's equity",
+  "dividen": "dividends",
+  "pendapatan": "revenue",
+  "penjualan": "sales",
+  "retur penjualan": "sales return",
+  "pendapatan bunga": "interest income",
+  "pendapatan sewa": "rental income",
+  "pendapatan lain-lain": "other income",
+  "beban": "expenses",
+  "harga pokok penjualan": "cost of goods sold",
+  "beban gaji": "salary expenses",
+  "beban sewa": "rent expenses",
+  "beban listrik": "electricity expenses",
+  "beban telepon": "telephone expenses",
+  "beban air": "water expenses",
+  "beban penyusutan": "depreciation expenses",
+  "beban iklan": "advertising expenses",
+  "beban pajak": "tax expenses",
+  "beban bunga": "interest expenses",
+  "beban lain-lain": "other expenses",
+  "piutang tak tertagih": "bad debts",
+  "cadangan": "reserve",
+  "aset lain-lain": "other assets",
+  "beban administrasi": "administrative expenses",
+  "biaya operasional": "operational expenses",
+  "laba bersih": "net profit",
+  "kerugian bersih": "net loss",
+  "pendapatan jasa": "service revenue",
+  "pendapatan dari proyek": "project revenue",
+  "beban jasa": "service expenses",
+  "beban perjalanan": "travel expenses",
+  "beban pelatihan": "training expenses",
+  "beban konsultan": "consultant expenses",
+  "beban riset dan pengembangan": "research and development expenses",
+  "beban administrasi umum": "general administrative expenses",
+  "beban pemeliharaan": "maintenance expenses",
+  "pendapatan lain-lain jasa": "other service income",
+  "pembelian": "purchases",
+  "beban pengiriman": "shipping expenses",
+  "diskon pembelian": "purchase discounts",
+  "beban gudang": "warehouse expenses",
+  "pendapatan penjualan": "sales revenue",
+  "retur pembelian": "purchase returns",
+  "beban penjualan": "selling expenses",
+  "beban pengemasan": "packaging expenses",
+  "beban distribusi": "distribution expenses",
+  "pajak penjualan": "sales tax payable",
+  "hutang pembelian": "purchase payables",
+  "pendapatan penjualan manufaktur": "manufacturing sales revenue",
+  "beban pokok produksi": "cost of goods manufactured",
+  "beban bahan baku": "raw materials expenses",
+  "beban tenaga kerja langsung": "direct labor expenses",
+  "beban overhead pabrik": "factory overhead expenses",
+  "beban persediaan": "inventory expenses",
+  "persediaan barang jadi": "finished goods inventory",
+  "persediaan barang dalam proses": "work in progress inventory",
+  "beban penyusutan aset produksi": "depreciation of production assets",
+  "beban pabrikasi": "manufacturing expenses",
+  "beban bahan pembantu": "auxiliary materials expenses",
+  "beban biaya produksi lain-lain": "other production costs"
+};
+
+    document.getElementById("translatorForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const input = document.getElementById("accountName").value.trim().toLowerCase();
+      const result = translations[input] || "Terjemahan tidak ditemukan.";
+      document.getElementById("result").innerText = `Hasil: ${result}`;
+    });
+  </script>
+</body>
+</html>
